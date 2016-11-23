@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:mongo="http://www.springframework.org/schema/data/mongo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd    
+           	http://www.springframework.org/schema/context     
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd
+       		http://www.springframework.org/schema/task
+			http://www.springframework.org/schema/task/spring-task-3.0.xsd 
+			http://www.springframework.org/schema/util 
+          	http://www.springframework.org/schema/util/spring-util-3.0.xsd
+          	http://www.springframework.org/schema/mvc  
+			http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+			http://www.springframework.org/schema/data/mongo  
+           	http://www.springframework.org/schema/data/mongo/spring-mongo.xsd">
+
+
+                   <mvc:annotation-driven />
+                 <!-- 处理静态资源 -->
+                 <mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/images/**" location="/images/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/helper/**" location="/helper/" />
+	<mvc:resources mapping="/project/**" location="/project/" />
+	<mvc:resources mapping="/faq/**" location="/faq/" />
+	<mvc:resources mapping="/download/**" location="/download/" /> 
+	<mvc:resources mapping="/bootstrap/**" location="/bootstrap/" /> 
+	<mvc:resources mapping="/disk/**" location="/disk/" /> 
+	<mvc:resources mapping="/documentation/**" location="/documentation/" /> 
+	<mvc:resources mapping="/plugins/**" location="/plugins/" /> 
+	<mvc:resources mapping="/index.html" location="/index.html" /> 
+	<mvc:default-servlet-handler />
+       
+        <context:component-scan base-package="net.yun10000.controller"/>
+        <bean class="net.yun10000.config.WebConfig"></bean>
+         
+        <!-- <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"> 
+        </bean>
+        -->
+
+	<!-- 文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="maxUploadSize" value="10485760000"></property>
+		<property name="maxInMemorySize" value="40960"></property>
+	</bean>
+	<!-- 
+	<mvc:interceptors>
+		<bean class="com.clever.app.config.interceptor.DevInterceptor" />
+	</mvc:interceptors>
+	 -->
+</beans>

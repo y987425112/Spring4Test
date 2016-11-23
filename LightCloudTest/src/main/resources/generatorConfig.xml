@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <context id="context1" >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.2.7:3306/light_cloud " userId="root" password="root" />
+    <javaModelGenerator targetPackage="net.yun10000.model" targetProject="LightCloudTest" />
+    <sqlMapGenerator targetPackage="mapping" targetProject="LightCloudTest" />
+    <javaClientGenerator targetPackage="mapping" targetProject="LightCloudTest" type="XMLMAPPER" />
+    <table schema="???" tableName="???" >
+      <columnOverride column="???" property="???" />
+    </table>
+  </context>
+</generatorConfiguration>
